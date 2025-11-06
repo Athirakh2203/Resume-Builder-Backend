@@ -1,19 +1,23 @@
-//1 Import Json Server
-const JsonServer= require('json-server')
+// 1. import json-server
+const jsonServer=require('json-server')
 
-//2 Create server using json server
-const rbuiderServer=JsonServer.create()
+//  2. create a server using jsonServer
+const rbuilderServer=jsonServer.create()
 
-//3 Creation of middleware
-const middleware=JsonServer.defaults()
+//  3. creation of middleware
+const middleware=jsonServer.defaults()
 
-//4 Router setup
-const router=JsonServer.router('db.json')
+//  4. router setup
+const router=jsonServer.router('db.json')
 
-//5 Implementing use
-rbuiderServer.use(middleware)
-rbuiderServer.use(router)
+// 5. implementing use
+rbuilderServer.use(middleware)
+rbuilderServer.use(router)
 
-//6 Port creation
-rbuiderServer.listen(port,()=>{console.log("Resume Builder Server Running On The Port"+port);})
+//  6. port creation
+const port=3000 || process.env.port
 
+//  7. start server
+rbuilderServer.listen(port,()=>{
+    console.log("Resume Builder Server running on the port"+port)
+})

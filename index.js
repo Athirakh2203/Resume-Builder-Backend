@@ -15,5 +15,5 @@ rbuiderServer.use(middleware)
 rbuiderServer.use(router)
 
 //6 Port creation
-rbuiderServer.listen(prompt,()=>{console.log("Resume Builder Server Running On The Port"+port);})
+rbuiderServer.listen(port,()=>{console.log("Resume Builder Server Running On The Port"+port);})
 
